@@ -1,0 +1,9 @@
+﻿@page "/"
+@inject IOptions<DonatonConfiguration> options
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+<div> Aqui debe aparecer la configuration @options.Value.UrlBaseApi</div>
+
+<SurveyPrompt Title="How is Blazor working for you?" />
