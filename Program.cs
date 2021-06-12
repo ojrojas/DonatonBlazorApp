@@ -1,13 +1,11 @@
 using System;
 using System.Net.Http;
-using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Text;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using DonatonBlazor.Configuration;
+using MatBlazor;
 
 namespace DonatonBlazor
 {
@@ -32,6 +30,7 @@ namespace DonatonBlazor
             var UrlBaseConfiguration = AppConfiguration.GetSection("UrlBaseApi");
 
             builder.Services.Configure<DonatonConfiguration>(config => config.UrlBaseApi = UrlBaseConfiguration.Value);
+            builder.Services.AddMatBlazor();
 
             await builder.Build().RunAsync();
         }
